@@ -10,7 +10,7 @@ class GoogleSignIn::AuthorizationsController < GoogleSignIn::BaseController
 
   private
     def login_url(**params)
-      client.auth_code.authorize_url(prompt: 'login', **params)
+      client.auth_code.authorize_url(prompt: 'login', access_type: 'offline', **params)
     end
 
     def state
